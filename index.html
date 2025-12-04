@@ -145,4 +145,52 @@
         <tr><td>Fast food</td><td class="col-audio"><audio id="aud-fast_food" src="fast_food.mp3"></audio><button class="play-btn" onclick="playAudio('aud-fast_food')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Comida r&aacute;pida</td></tr>
         <tr><td>Takeaway</td><td class="col-audio"><audio id="aud-takeaway" src="takeaway.mp3"></audio><button class="play-btn" onclick="playAudio('aud-takeaway')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Para llevar</td></tr>
         <tr><td>Menu</td><td class="col-audio"><audio id="aud-menu" src="menu.mp3"></audio><button class="play-btn" onclick="playAudio('aud-menu')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Men&uacute;</td></tr>
-        <tr><td>Meal</td><td class="col-audio"><audio id="aud-meal" src="meal.mp3"></audio><button class="play-btn" onclick="playAudio('aud-meal')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7
+        <tr><td>Meal</td><td class="col-audio"><audio id="aud-meal" src="meal.mp3"></audio><button class="play-btn" onclick="playAudio('aud-meal')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Comida</td></tr>
+        <tr><td>Recipe</td><td class="col-audio"><audio id="aud-recipe" src="recipe.mp3"></audio><button class="play-btn" onclick="playAudio('aud-recipe')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Receta</td></tr>
+        
+    </tbody>
+</table>
+
+<script>
+    /**
+     * Función mejorada para reproducir audio, manejando la pausa de otros audios
+     * y las promesas de reproducción (para evitar errores en algunos navegadores).
+     */
+    function playAudio(id) {
+        var audio = document.getElementById(id);
+
+        if (!audio) {
+            console.error("Audio element not found with ID: " + id);
+            return;
+        }
+        
+        // 1. Pausar y reiniciar todos los demás audios
+        document.querySelectorAll('audio').forEach(function(el) {
+            if(el !== audio && !el.paused) {
+                el.pause();
+                el.currentTime = 0;
+            }
+        });
+
+        // 2. Reproducir o pausar el seleccionado
+        if (audio.paused || audio.currentTime === 0) {
+            // Reproducir desde el inicio
+            audio.currentTime = 0; 
+            var playPromise = audio.play();
+            
+            // Manejar errores de promesa (común en navegadores por permisos)
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.error("Playback failed (check file path and browser restrictions): ", error);
+                });
+            }
+        } else {
+            // Si está sonando, pausar y volver al inicio (para un 'reset')
+            audio.pause();
+            audio.currentTime = 0;
+        }
+    }
+</script>
+
+</body>
+</html>
