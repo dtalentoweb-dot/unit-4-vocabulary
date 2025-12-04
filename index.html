@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vocabulario Comida y Cocina</title>
+<style>
+    /* ESTILOS BASE Y FUENTE */
+    body { 
+        font-family: 'Inter', Arial, sans-serif; 
+        padding: 20px; 
+        background-color: #f4f4f4; 
+    }
+    
+    /* ESTILOS DE LA TABLA */
+    .vocab-table {
+        width: 100%;
+        max-width: 900px; 
+        margin: 20px auto; 
+        border-collapse: collapse;
+        background-color: white;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        overflow: hidden; 
+    }
+    
+    .vocab-table th, .vocab-table td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        vertical-align: middle;
+    }
+    
+    .vocab-table th {
+        background-color: #2c3e50;
+        color: white;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+    
+    .vocab-table tr:nth-child(even):not(.category-row) { background-color: #f9f9f9; }
+    .vocab-table tr:hover:not(.category-row) { background-color: #f1f1f1; }
+
+    /* Columnas específicas */
+    .col-audio { text-align: center; width: 80px; }
+    .col-spanish { color: #555; }
+
+    /* Fila de categoría */
+    .category-row td {
+        background-color: #ecf0f1;
+        font-weight: bold;
+        text-align: center;
+        font-size: 1.1em;
+        padding: 10px;
+        border-bottom: 2px solid #bdc3c7;
+        color: #2c3e50;
+    }
+
+    /* ESTILO DEL BOTÓN PLAY */
+    .play-btn {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.1s, background-color 0.2s;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .play-btn:hover { background-color: #2980b9; transform: scale(1.1); }
+    .play-btn:active { transform: scale(0.95); }
+    
+    .play-btn svg { width: 16px; height: 16px; fill: white; margin-left: 2px; }
+    
+</style>
+</head>
+<body>
+
+<table class="vocab-table">
+    <thead>
+        <tr>
+            <th>ENGLISH</th>
+            <th class="col-audio">AUDIO</th>
+            <th>ESPA&Ntilde;OL</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="category-row"><td colspan="3">Comida y Bebidas</td></tr>
+        
+        <tr><td>Beans</td><td class="col-audio"><audio id="aud-beans" src="beans.mp3"></audio><button class="play-btn" onclick="playAudio('aud-beans')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Jud&iacute;as</td></tr>
+        <tr><td>Bread</td><td class="col-audio"><audio id="aud-bread" src="bread.mp3"></audio><button class="play-btn" onclick="playAudio('aud-bread')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Pan</td></tr>
+        <tr><td>Burger</td><td class="col-audio"><audio id="aud-burger" src="burger.mp3"></audio><button class="play-btn" onclick="playAudio('aud-burger')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Hamburguesa</td></tr>
+        <tr><td>Coffee</td><td class="col-audio"><audio id="aud-coffee" src="coffee.mp3"></audio><button class="play-btn" onclick="playAudio('aud-coffee')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Caf&eacute;</td></tr>
+        <tr><td>Cheese</td><td class="col-audio"><audio id="aud-cheese" src="cheese.mp3"></audio><button class="play-btn" onclick="playAudio('aud-cheese')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Queso</td></tr>
+        <tr><td>Chicken</td><td class="col-audio"><audio id="aud-chicken" src="chicken.mp3"></audio><button class="play-btn" onclick="playAudio('aud-chicken')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Pollo</td></tr>
+        <tr><td>Dessert</td><td class="col-audio"><audio id="aud-dessert" src="dessert.mp3"></audio><button class="play-btn" onclick="playAudio('aud-dessert')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Postre</td></tr>
+        <tr><td>Egg</td><td class="col-audio"><audio id="aud-egg" src="egg.mp3"></audio><button class="play-btn" onclick="playAudio('aud-egg')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Huevo</td></tr>
+        <tr><td>Fish</td><td class="col-audio"><audio id="aud-fish" src="fish.mp3"></audio><button class="play-btn" onclick="playAudio('aud-fish')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Pescado</td></tr>
+        <tr><td>Honey</td><td class="col-audio"><audio id="aud-honey" src="honey.mp3"></audio><button class="play-btn" onclick="playAudio('aud-honey')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Miel</td></tr>
+        <tr><td>Jam</td><td class="col-audio"><audio id="aud-jam" src="jam.mp3"></audio><button class="play-btn" onclick="playAudio('aud-jam')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Mermelada</td></tr>
+        <tr><td>Juice</td><td class="col-audio"><audio id="aud-juice" src="juice.mp3"></audio><button class="play-btn" onclick="playAudio('aud-juice')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Zumo</td></tr>
+        <tr><td>Vegetables</td><td class="col-audio"><audio id="aud-vegetables" src="vegetables.mp3"></audio><button class="play-btn" onclick="playAudio('aud-vegetables')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Verduras</td></tr>
+        <tr><td>Soft drink</td><td class="col-audio"><audio id="aud-soft_drink" src="soft_drink.mp3"></audio><button class="play-btn" onclick="playAudio('aud-soft_drink')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Refresco</td></tr>
+        <tr><td>Fizzy drink</td><td class="col-audio"><audio id="aud-fizzy_drink" src="fizzy_drink.mp3"></audio><button class="play-btn" onclick="playAudio('aud-fizzy_drink')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Bebida con gas</td></tr>
+
+        <tr class="category-row"><td colspan="3">Acciones y Preparación (Verbos)</td></tr>
+
+        <tr><td>boil</td><td class="col-audio"><audio id="aud-boil" src="boil.mp3"></audio><button class="play-btn" onclick="playAudio('aud-boil')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Hervir</td></tr>
+        <tr><td>Chop</td><td class="col-audio"><audio id="aud-chop" src="chop.mp3"></audio><button class="play-btn" onclick="playAudio('aud-chop')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Cortar</td></tr>
+        <tr><td>Slice</td><td class="col-audio"><audio id="aud-slice" src="slice.mp3"></audio><button class="play-btn" onclick="playAudio('aud-slice')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Cortar en rebanadas</td></tr>
+        <tr><td>Bake</td><td class="col-audio"><audio id="aud-bake" src="bake.mp3"></audio><button class="play-btn" onclick="playAudio('aud-bake')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Hornear</td></tr>
+        <tr><td>Fry</td><td class="col-audio"><audio id="aud-fry" src="fry.mp3"></audio><button class="play-btn" onclick="playAudio('aud-fry')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Freir</td></tr>
+        <tr><td>Cook</td><td class="col-audio"><audio id="aud-cook" src="cook.mp3"></audio><button class="play-btn" onclick="playAudio('aud-cook')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Cocinar / cocinero</td></tr>
+        <tr><td>Wash</td><td class="col-audio"><audio id="aud-wash" src="wash.mp3"></audio><button class="play-btn" onclick="playAudio('aud-wash')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Lavar</td></tr>
+        <tr><td>Mix</td><td class="col-audio"><audio id="aud-mix" src="mix.mp3"></audio><button class="play-btn" onclick="playAudio('aud-mix')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Mezclar</td></tr>
+        <tr><td>Feed</td><td class="col-audio"><audio id="aud-feed" src="feed.mp3"></audio><button class="play-btn" onclick="playAudio('aud-feed')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Alimentar</td></tr>
+
+        <tr class="category-row"><td colspan="3">Lugares y Utensilios</td></tr>
+
+        <tr><td>Café</td><td class="col-audio"><audio id="aud-cafe" src="cafe.mp3"></audio><button class="play-btn" onclick="playAudio('aud-cafe')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Cafeter&iacute;a</td></tr>
+        <tr><td>Cooker</td><td class="col-audio"><audio id="aud-cooker" src="cooker.mp3"></audio><button class="play-btn" onclick="playAudio('aud-cooker')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Cocina (fog&oacute;n)</td></tr>
+        <tr><td>Oven</td><td class="col-audio"><audio id="aud-oven" src="oven.mp3"></audio><button class="play-btn" onclick="playAudio('aud-oven')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Horno</td></tr>
+        <tr><td>Kitchen</td><td class="col-audio"><audio id="aud-kitchen" src="kitchen.mp3"></audio><button class="play-btn" onclick="playAudio('aud-kitchen')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Cocina</td></tr>
+        <tr><td>Plate</td><td class="col-audio"><audio id="aud-plate" src="plate.mp3"></audio><button class="play-btn" onclick="playAudio('aud-plate')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Plato</td></tr>
+        <tr><td>Bowl</td><td class="col-audio"><audio id="aud-bowl" src="bowl.mp3"></audio><button class="play-btn" onclick="playAudio('aud-bowl')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Bol</td></tr>
+        <tr><td>Freezer</td><td class="col-audio"><audio id="aud-freezer" src="freezer.mp3"></audio><button class="play-btn" onclick="playAudio('aud-freezer')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Congelador</td></tr>
+        <tr><td>Fridge</td><td class="col-audio"><audio id="aud-fridge" src="fridge.mp3"></audio><button class="play-btn" onclick="playAudio('aud-fridge')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Frigor&iacute;fico</td></tr>
+
+        <tr class="category-row"><td colspan="3">Otros Términos</td></tr>
+
+        <tr><td>Chef</td><td class="col-audio"><audio id="aud-chef" src="chef.mp3"></audio><button class="play-btn" onclick="playAudio('aud-chef')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Jefe de cocina</td></tr>
+        <tr><td>Cuisine</td><td class="col-audio"><audio id="aud-cuisine" src="cuisine.mp3"></audio><button class="play-btn" onclick="playAudio('aud-cuisine')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Cocina (estilo)</td></tr>
+        <tr><td>Lunch</td><td class="col-audio"><audio id="aud-lunch" src="lunch.mp3"></audio><button class="play-btn" onclick="playAudio('aud-lunch')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Comida (mediod&iacute;a)</td></tr>
+        <tr><td>Dinner</td><td class="col-audio"><audio id="aud-dinner" src="dinner.mp3"></audio><button class="play-btn" onclick="playAudio('aud-dinner')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Cena</td></tr>
+        <tr><td>Sauce</td><td class="col-audio"><audio id="aud-sauce" src="sauce.mp3"></audio><button class="play-btn" onclick="playAudio('aud-sauce')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Salsa</td></tr>
+        <tr><td>Dish</td><td class="col-audio"><audio id="aud-dish" src="dish.mp3"></audio><button class="play-btn" onclick="playAudio('aud-dish')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Plato</td></tr>
+        <tr><td>Vegetarian</td><td class="col-audio"><audio id="aud-vegetarian" src="vegetarian.mp3"></audio><button class="play-btn" onclick="playAudio('aud-vegetarian')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Vegetariano</td></tr>
+        <tr><td>Vegan</td><td class="col-audio"><audio id="aud-vegan" src="vegan.mp3"></audio><button class="play-btn" onclick="playAudio('aud-vegan')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Vegano</td></tr>
+        <tr><td>Fast food</td><td class="col-audio"><audio id="aud-fast_food" src="fast_food.mp3"></audio><button class="play-btn" onclick="playAudio('aud-fast_food')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Comida r&aacute;pida</td></tr>
+        <tr><td>Takeaway</td><td class="col-audio"><audio id="aud-takeaway" src="takeaway.mp3"></audio><button class="play-btn" onclick="playAudio('aud-takeaway')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Para llevar</td></tr>
+        <tr><td>Menu</td><td class="col-audio"><audio id="aud-menu" src="menu.mp3"></audio><button class="play-btn" onclick="playAudio('aud-menu')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Men&uacute;</td></tr>
+        <tr><td>Meal</td><td class="col-audio"><audio id="aud-meal" src="meal.mp3"></audio><button class="play-btn" onclick="playAudio('aud-meal')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7
